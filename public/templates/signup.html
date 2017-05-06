@@ -1,0 +1,31 @@
+<link href="css/snow.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<div class="snow-container">
+			  <div class="snow foreground"></div>
+			  <div class="snow foreground layered"></div>
+			  <div class="snow middleground"></div>
+			  <div class="snow middleground layered"></div>
+			  <div class="snow background"></div>
+			  <div class="snow background layered"></div>
+			</div>
+
+<div class="top-buttons-agileinfo">
+<a href="sign-in.html">Sign In</a><a href="signup.html" class="active">Sign Up</a>
+</div>
+<h1>Sign Up Form</h1>
+<div class="main-agileits">
+<!--form-stars-here-->
+		<div class="form-w3-agile">
+			<h2 class="sub-agileits-w3layouts">Sign Up</h2>
+			<form ng-submit="submit()" ng-controller="userController">
+				<input type="text" ng-model="userData.first_name" placeholder="First Name" required="" />
+				<input type="text" ng-model="userData.last_name" placeholder="Last Name" required="" />
+				<input type="text" ng-model="userData.email" placeholder="Username" required="" />
+				<input type="password" ng-model="userData.password" placeholder="Password" required="" />
+				<input type="password" ng-model="userData.password2" placeholder="Confirm Password" required="" />
+				<div class="submit-w3l">
+					<input type="submit" value="Sign up">
+				</div>
+			</form>
+		</div>
+		</div>

@@ -1,0 +1,34 @@
+<link href="css/snow.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<div class="snow-container">
+			  <div class="snow foreground"></div>
+			  <div class="snow foreground layered"></div>
+			  <div class="snow middleground"></div>
+			  <div class="snow middleground layered"></div>
+			  <div class="snow background"></div>
+			  <div class="snow background layered"></div>
+			</div>
+
+<div class="top-buttons-agileinfo">
+<a href="index.html"  class="active">Sign In</a><a href="signup.html">Sign Up</a>
+</div>
+<h1>Sign In</h1>
+<div class="main-agileits" ng-controller='userController'>
+<!--form-stars-here-->
+		<div class="form-w3-agile">
+			<h2 class="sub-agileits-w3layouts">Sign In</h2>
+			<div class="alert alert-danger" ng-show="showAlert">
+				<button type="button" class="close">×</button>
+				<strong>{{SignInMessage}}</strong>
+			</div>
+			<form ng-submit='SignIn()' name='signIn'>
+					<input type="email" ng-model="signIn.email" placeholder="Email" required="" />
+					<input type="password" ng-model="signIn.password" placeholder="Password" required="" />
+					<a href="#" class="forgot-w3layouts">Forgot Password ?</a>
+				<div class="submit-w3l">
+					<input type="submit" value="Sign in">
+				</div>
+				<p class="p-bottom-w3ls"><a href="sign-up.html">Sign Up here</a>if u do not have an account yet.</p>
+			</form>
+		</div>
+		</div>

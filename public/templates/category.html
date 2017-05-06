@@ -1,0 +1,49 @@
+<md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-truncate style="position: absolute; left: 40px; right: 170px; top: 13px; bottom: 13px;">Estate Panel</md-truncate>
+
+        <span flex></span>
+
+         <md-button class="md-fab md-mini" aria-label="Favorite">
+           <md-tooltip md-direction="left">Dashboard</md-tooltip>
+          <md-icon md-font-library="material-icons">dashboard</md-icon>
+        </md-button>
+
+         <md-button class="md-fab md-mini" aria-label="Favorite" ng-click="showDailog($event)" ng-if="categoryId.length > 2"  ng-controller="wordsController">
+           <md-tooltip md-direction="left">Add Word</md-tooltip>
+          <md-icon md-font-library="material-icons" >add circle</md-icon>
+        </md-button>
+       <div ng-controller="userController"> 
+        <md-button class="md-fab md-mini" ng-controller='userController' aria-label="Favorite" ng-click = "logout(user_id)">
+           <md-tooltip md-direction="left" >Logout</md-tooltip>
+          <md-icon md-font-library="material-icons"   >power settings new</md-icon>
+        </div>
+        </md-button>
+      </div>
+</md-toolbar>
+<div ng-controller="wordsController">
+  <div class='row'>
+    <div class="pull-right">
+      <md-content class="md-padding"><md-button class="md-raised md-primary" ng-href="#/category/{{categoryId}}/quiz/1">Take Quiz</md-button>
+      </md-content>
+    </div>
+  </div>
+
+  <md-content class="md-padding" ng-init='getWordsOfCategory()'>
+      <div layout="" layout-gt-xs="row" layout-wrap >
+          <md-card class='' flex='25' flex-gt-xs='20'  layout-align="center center" ng-repeat="word in wordsArr"  >
+            <img ng-src="{{word.imgSrc}}" class="md-card-image" alt="Washed Out" style='height:140px !important; '>
+              <span layout="row"><hr  flex style="color:#000"/></span>
+              <md-button md-no-ink class="md-raised" id='play'>{{word.text}}</md-button>
+              <!--<md-button>
+                <md-icon md-font-icon="icon-home" ng-style="{color: 'green', 'font-size':'36px', height:'36px'}">
+                </md-icon>
+              </md-button>-->
+              <!--<md-button md-no-ink class=" md-raised" id='add{{todo.id}}' ng-click='add_alphabet(todo.id)'>Add</md-button>-->
+              <!--<md-card-content>
+                <audio id="buzzer" src="audio files/alif.mp3" type="audio/ogg">Your browser does not support the &#60;audio&#62; element.</audio>
+              </md-card-content>-->
+          </md-card>
+      </div>
+  </md-content>
+</div>
