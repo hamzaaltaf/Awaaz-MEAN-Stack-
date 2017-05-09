@@ -103,6 +103,38 @@ app.post('/user/create', function(req,res) {
   })
 })
 
+app.post('/user/update', function(req,res) {
+  /* Takes in the request body which has form data 
+     and edit user using the data and 
+     call Model function of updateUser
+  */
+  console.log(req.body)
+  var userobj = ({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email : req.body.email,
+    password : req.body.password,
+    passwordConfirmation : req.body.passwordConfirmation
+  })
+
+  User.updateUser(userobj, function(err, user) {
+    if (err) throw err;
+    console.log('This is user changed' + user)
+    res.send(user)
+  })
+})
+
+app.post('/user/show', function(req, res) {
+  User.findUserById(req.body.id, function(err, user){
+		if (err)
+			throw err;
+    console.log('This is user ' + user)
+    res.send(user);
+  })
+})
+
+
+// 
 app.post('/user/signin', function(req, res) {
   /*
     Takes in the user email and password to 
@@ -247,11 +279,12 @@ app.post('/getWords', function(req, res){
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.post('/addMarks', function(req, res){
-  console.log(req.body)
+  console.log('This is for marks  ' + req.body)
   var markingObj = new marking ({
     marks: req.body.marks,
     owner_id: req.body.owner_id,
     category_id : req.body.category_id,
+    total : req.body.total
   })
 
   marking.createMarking(markingObj, function(err, marking){
@@ -265,7 +298,13 @@ app.post('/category/add',function(req, res) {
   res.send('Received')
 })
 
-
+app.post('/user/stats', function(req, res) {
+  marking.getStats(req.body.id, function(err, stats) {
+    if (err) throw err;
+    console.log('these are stats '+ stats)
+    res.send(stats);
+  })
+})
 
 // Connect Flash
 app.use(flash());

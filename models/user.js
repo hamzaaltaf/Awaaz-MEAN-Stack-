@@ -27,6 +27,17 @@ module.exports.createUser = function(userobj, callback) {
     userobj.save(callback);
 }
 
+module.exports.updateUser = function(userobj, callback) {
+   console.log('look at this ' + userobj)
+   user.findOneAndUpdate(
+        { "email" : userobj.email},userobj, callback)
+}
+
 module.exports.findUserByEmail =  function(email, callback) {
     user.findOne({email: email}, callback)
 }
+
+module.exports.findUserById = function(id, callback) {
+    user.findOne({_id: id}, callback)
+}
+

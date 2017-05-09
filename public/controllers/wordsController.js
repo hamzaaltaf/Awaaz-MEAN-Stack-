@@ -8,18 +8,6 @@ myapp.controller('wordsController',function ($scope, $mdDialog, $route, $routePa
     $scope.sessionService = sessionService;
     
 
-	//  
-
-
-
-
-
-
-
-
-
-
-	// 
     var words = [
 			
 			{text: 'Balcony', imgSrc:'images/house/balcony.jpeg', audioSrc:'audio files/weather.mp3', category_id:8},

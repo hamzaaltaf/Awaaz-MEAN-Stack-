@@ -1,0 +1,112 @@
+<md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-truncate style="position: absolute; left: 40px; right: 170px; top: 13px; bottom: 13px;">Estate Panel</md-truncate>
+
+        <span flex></span>
+
+         <md-button class="md-fab md-mini" aria-label="Favorite">
+           <md-tooltip md-direction="left">Dashboard</md-tooltip>
+          <md-icon md-font-library="material-icons">dashboard</md-icon>
+        </md-button>
+
+         <md-button class="md-fab md-mini" aria-label="Favorite" ng-click="showDailog($event)"  ng-controller="categoriesController">
+           <md-tooltip md-direction="left">Add Category</md-tooltip>
+          <md-icon md-font-library="material-icons" >add circle</md-icon>
+        </md-button>
+       <div ng-controller="userController"> 
+        <md-button class="md-fab md-mini" ng-controller='userController' aria-label="Favorite" ng-click = "logout(user_id)">
+           <md-tooltip md-direction="left" >Logout</md-tooltip>
+          <md-icon md-font-library="material-icons"   >power settings new</md-icon>
+        </div>
+        </md-button>
+        <md-button class="md-fab md-mini" ng-controller='userController' aria-label="Favorite" ng-click = "account_edit('user')">
+           <md-tooltip md-direction="left" >Settings</md-tooltip>
+          <md-icon md-font-library="material-icons"   >face</md-icon>
+        </div>
+        </md-button>
+      </div>
+</md-toolbar>
+<div ng-controller="userController" ng-init='getUser()'>
+    <section layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" style='height:100% !important;'>
+            <md-toolbar class="md-tall md-hue-2">
+                <span flex></span>
+                <div layout="column" class="md-toolbar-tools-bottom inset">
+                <user-avatar></user-avatar>
+                <span></span>
+                <div>{{userInfo.firstName}}</div>
+                <div>{{userInfo.email}}</div>
+                </div>
+            </md-toolbar>
+            <md-list>
+                <md-item ng-repeat="item in menu">
+                    <a>
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                        <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                        </div>
+                        <div class="inset" ng-click='navigateStats()'>{{item.title}}
+                        </div>
+                    </md-item-content>
+                    </a>
+                </md-item>
+            </md-list>
+        </md-sidenav>
+
+        <div layout="column" class="relative" layout-fill role="main"  ng-controller="userController" ng-init='getUser()'>
+            <h3>Update Account Details</h3>
+            <hr>
+            <div class="alert alert-danger" ng-show="showUpdateAlert">
+                <button type="button" class="close">×</button>
+                <strong>{{updateMessage}}</strong>
+            </div>
+        <form ng-submit='updateUser()'> 
+                <div class="row">
+                    <div class=" col-xs-offset-1 col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">First Name:</label>
+                            <input type="text" class="form-control" ng-model="userInfo.firstName" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-xs-offset-1 col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Last Name:</label>
+                            <input type="text" class="form-control"  ng-model="userInfo.lastName">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-xs-offset-1 col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Email</label>
+                            <input type="text" class="form-control"  ng-model="userInfo.email">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-xs-offset-1 col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Password</label>
+                            <input type="text" class="form-control"  ng-model="userInfo.password">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-xs-offset-1 col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Confirm Password</label>
+                            <input type="text" class="form-control"  ng-model="userInfo.passwordConfirmation">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-xs-offset-1 col-md-3 col-xs-12">
+                        <md-button type="submit" class='md-raised md-primary' value="Submit">Edit</md-button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

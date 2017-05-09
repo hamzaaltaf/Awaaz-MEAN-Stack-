@@ -2,3 +2,12 @@
       	font-family: 'mehr';
 		src: url('Mehr Nastaliq Web version 1.0 beta.ttf')  format('opentype');
       }
+
+.user-avatar {
+  border-radius: 99%;
+}
+
+.small-box{
+  background-color: #dd5827;
+  color: white;
+}

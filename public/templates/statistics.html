@@ -1,0 +1,90 @@
+<md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-truncate style="position: absolute; left: 40px; right: 170px; top: 13px; bottom: 13px;">Estate Panel</md-truncate>
+
+        <span flex></span>
+
+         <md-button class="md-fab md-mini" aria-label="Favorite" ng-click="navigateDashboard()">
+           <md-tooltip md-direction="left">Dashboard</md-tooltip>
+          <md-icon md-font-library="material-icons">dashboard</md-icon>
+        </md-button>
+
+         <md-button class="md-fab md-mini" aria-label="Favorite" ng-click="showDailog($event)"  ng-controller="categoriesController">
+           <md-tooltip md-direction="left">Add Category</md-tooltip>
+          <md-icon md-font-library="material-icons" >add circle</md-icon>
+        </md-button>
+       <div ng-controller="userController"> 
+        <md-button class="md-fab md-mini" ng-controller='userController' aria-label="Favorite" ng-click = "logout(user_id)">
+           <md-tooltip md-direction="left" >Logout</md-tooltip>
+          <md-icon md-font-library="material-icons"   >power settings new</md-icon>
+        </div>
+        </md-button>
+        <md-button class="md-fab md-mini" ng-controller='userController' aria-label="Favorite" ng-click = "account_edit('user')">
+           <md-tooltip md-direction="left" >Settings</md-tooltip>
+          <md-icon md-font-library="material-icons"   >face</md-icon>
+        </div>
+        </md-button>
+      </div>
+</md-toolbar>
+<div ng-controller="userController" ng-init='getUserStats()' >
+    <section layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" style='height:100% !important;'>
+            <md-toolbar class="md-tall md-hue-2">
+                <span flex></span>
+                <div layout="column" class="md-toolbar-tools-bottom inset" ng-init="getUser()">
+                <user-avatar></user-avatar>
+                <span></span>
+                <div>{{userInfo.firstName}}</div>
+                </div>
+            </md-toolbar>
+            <md-list>
+                <md-item ng-repeat="item in menu">
+                    <a>
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                        <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                        </div>
+                        <div class="inset" ng-click='navigateStats()'>{{item.title}}
+                        </div>
+                    </md-item-content>
+                    </a>
+                </md-item>
+            </md-list>
+        </md-sidenav>
+
+        <div layout="column" class="relative" layout-fill role="main"  ng-controller="userController" ng-init='getUserStats()'>
+            <div class='row container'>
+                <div class="col-md-3 col-xs-6">
+                     <div class="small-box" style="background-color:#dd5827">
+                        <div class="inner">
+                            <h3>15</h3>
+                            <p>Total Students</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="small-box" style="background-color:#79c4d3">
+                        <div class="inner">
+                            <h3>{{totalStats}}</h3>
+                            <p>Quizzes Attempted</p>
+                        </div>
+                    </div>
+                    </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="small-box" style="background-color:#ffcc02">
+                        <div class="inner">
+                            <h3>{{passed.length}}</h3>
+                            <p>Quizzes Passed</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-3 col-xs-6">
+                    <div class="small-box" style="background-color:#dd5827">
+                        <div class="inner">
+                            <h3>{{level}}</h3>
+                            <p>Level</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

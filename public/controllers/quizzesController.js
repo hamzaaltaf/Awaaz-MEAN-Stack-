@@ -98,7 +98,7 @@ $scope.checkAnswers = function(answers, answer) {
 	counter  = Number($routeParams.qid) + 1;
 	$location.path('category/'+ $routeParams.id + '/quiz/'+ counter);
 	if ($scope.changeButton == true) {
-		$http.post('/addMarks', {marks: markingService.get('score'), owner_id: sessionService.get('user'), category_id: $routeParams.id}).then(function(res){
+		$http.post('/addMarks', {marks: markingService.get('score'), owner_id: sessionService.get('user'), category_id: $routeParams.id, total: counter - 1}).then(function(res){
 			if (res.data.message == 'Marking Created') {
 				markingService.remove();
 				$location.path('/category/'+$routeParams.id);
