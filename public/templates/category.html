@@ -4,7 +4,7 @@
 
         <span flex></span>
 
-         <md-button class="md-fab md-mini" aria-label="Favorite">
+         <md-button class="md-fab md-mini" aria-label="Favorite" ng-controller="wordsController" ng-click='dashboard()'>
            <md-tooltip md-direction="left">Dashboard</md-tooltip>
           <md-icon md-font-library="material-icons">dashboard</md-icon>
         </md-button>
@@ -14,7 +14,7 @@
           <md-icon md-font-library="material-icons" >add circle</md-icon>
         </md-button>
        <div ng-controller="userController"> 
-        <md-button class="md-fab md-mini" ng-controller='userController' aria-label="Favorite" ng-click = "logout(user_id)">
+        <md-button class="md-fab md-mini" aria-label="Favorite" ng-click = "logout('user')">
            <md-tooltip md-direction="left" >Logout</md-tooltip>
           <md-icon md-font-library="material-icons"   >power settings new</md-icon>
         </div>
@@ -22,28 +22,36 @@
       </div>
 </md-toolbar>
 <div ng-controller="wordsController">
-  <div class='row'>
-    <div class="pull-right">
-      <md-content class="md-padding"><md-button class="md-raised md-primary" ng-href="#/category/{{categoryId}}/quiz/1">Take Quiz</md-button>
-      </md-content>
+  <md-content class="md-padding" style="background:#f2f2f2">
+    <div class='row' >
+      <div class="pull-right">
+      
+        <md-button class="md-raised md-primary" ng-href="#/category/{{categoryId}}/quiz/1">Take Quiz</md-button>
+        <md-button class="md-raised" on-click="back()">Back</md-button>
+      </div>
     </div>
-  </div>
-
+  </md-content>
   <md-content class="md-padding" ng-init='getWordsOfCategory()'>
-      <div layout="" layout-gt-xs="row" layout-wrap >
+      <div layout="row" layout-gt-xs="row" layout-wrap >
           <md-card class='' flex='25' flex-gt-xs='20'  layout-align="center center" ng-repeat="word in wordsArr"  >
             <img ng-src="{{word.imgSrc}}" class="md-card-image" alt="Washed Out" style='height:140px !important; '>
-              <span layout="row"><hr  flex style="color:#000"/></span>
-              <md-button md-no-ink class="md-raised" id='play'>{{word.text}}</md-button>
-              <!--<md-button>
-                <md-icon md-font-icon="icon-home" ng-style="{color: 'green', 'font-size':'36px', height:'36px'}">
-                </md-icon>
-              </md-button>-->
-              <!--<md-button md-no-ink class=" md-raised" id='add{{todo.id}}' ng-click='add_alphabet(todo.id)'>Add</md-button>-->
-              <!--<md-card-content>
-                <audio id="buzzer" src="audio files/alif.mp3" type="audio/ogg">Your browser does not support the &#60;audio&#62; element.</audio>
-              </md-card-content>-->
+              <span layout="column">
+                <md-button><h2 style="font-family: 'mehr';font-size:33px; font-weight:800" get-translated-text word="{{word.text}}"></h2></md-button>
+                <md-button id='play' ng-click='play(word.audioSrc)' md-padding class="md-raised md-primary">
+                  <!--<md-icon md-font-library="material-icons">volume up</md-icon>-->
+                  {{"Play"}}
+                </md-button>
+              </span>
+              </md-card-content>
           </md-card>
       </div>
+     <md-divider md-inset ></md-divider>
   </md-content>
 </div>
+
+
+<style>
+  .md-primary{
+    background: rgb(16,108,200) !important;
+  }   
+</style>

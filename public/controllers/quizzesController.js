@@ -3,11 +3,89 @@ $scope.markingService = markingService;
 $scope.sessionService = sessionService;
 $scope.changeButton = false;
 var aquiz = [
-	{category_id: 9, statement: 'images/fruits/apple.jpg', options:{A:'Apple', B:'Malta', C:'Melon'}, answer: 'A'}
-	,{category_id: 9, statement: 'images/fruits/pear.jpg', options:{A:'Apple', B:'Malta', C:'Melon'}, answer: 'A'}
-	,{category_id: 9, statement: 'images/fruits/pineapple.jpg', options:{A:'Apple', B:'Malta', C:'Melon'}, answer: 'A'}
-	,{category_id: 9, statement: 'images/fruits/watermelon.jpg', options:{A:'Apple', B:'Malta', C:'Melon'}, answer: 'A'}
+	{category_id: 9, statement: "images/fruits/apple.jpg", options: {A: " سیب " , B: "اسٹرابیری ", C: " مالٹا "}, answer: "A"}, 
+	{category_id: 9, statement: "images/fruits/watermelon.jpg", options: {A: " تربوز " , B: "خربوزه ", C: " سیب"}, answer: "A"},
+	{category_id: 9, statement: "images/fruits/pineapple.jpg", options: {A: " تربوز " , B: "انناس ", C: " اسٹرابیری "}, answer: "B"},
+	{category_id: 9, statement:"images/fruits/cherry.jpg" , options:{A: " تربوز " , B: "انناس ", C: " چیری " }, answer: "C"},
+	{category_id: 9, statement: "images/fruits/pear.jpg", options: {A: " سیب " , B: "ناشپاتی ", C: " اسٹرابیری"}, answer: "B"},
+	
+	{category_id: 14, statement: "images/vegetables/tomato.jpg", options: {A: " ٹماٹر " , B: "مولی  ", C: " آلو "}, answer: "A"},
+	{category_id: 14, statement: "images/vegetables/cabbage.jpg", options: {A: " آلو " , B: "گاجر ", C: " بند گوبهی"}, answer: "C"},
+	{category_id: 14, statement: "images/vegetables/garlic.jpg", options: {A: "گاجر " , B: "ادرک ", C: " لہسن"}, answer: "C"},
+	{category_id: 14, statement: "images/vegetables/carrot.jpg", options: {A: " لوکی " , B: "گاجر ", C: " مولی"}, answer: "B"},
+	{category_id: 14, statement: "images/vegetables/radish.jpg", options: {A: "مولی " , B: "لہسن ", C: " گاجر"}, answer: "A"},
+	
+	{category_id: 10, statement:"images/house/room.jpg" , options:{A: " گلی " , B: "باغ ", C: "کمره" }, answer: "C"},
+	{category_id: 10, statement: "images/house/stairs.jpg", options:{A: " سیڑھیاں " , B: "چھت ", C: "باورچی خانه" }, answer: "A"},
+	{category_id: 10, statement:"images/house/terrace.jpg" , options:{A: "باورچی خانه " , B: "چھت ", C: " غسلخانه " }, answer: "B"},
+	{category_id: 10, statement:"images/house/kitchen.jpg" , options:{A: "باغ " , B: "باورچی خانه ", C: " کمره" }, answer: "B"},
+	{category_id: 10, statement:"images/house/bathroom.jpg" , options:{A: " غسلخانه " , B: "کمره ", C: " سیڑھیاں" }, answer: "A"},
+	
+	{category_id: 3, statement:"images/organs/tongue.jpg" , options:{A: "چہرہ " , B: "دانت ", C: "زبان" }, answer: "C"},
+	{category_id: 3, statement:"images/organs/ear.jpg" , options:{A: "کان " , B: "چہرہ ", C: "ناک" }, answer: "A"},
+	{category_id: 3, statement:"images/organs/eyes.jpg" , options:{A: "زبان " , B: "آنکھیں ", C: "دانت " }, answer: "B"},
+	{category_id: 3, statement:"images/organs/teeth.jpg" , options:{A: "آنکھیں " , B: "دانت ", C: "کان " }, answer: "B"},
+	{category_id: 3, statement:"images/organs/nose.jpg" , options:{A: "چہرہ " , B: "ناک ", C: "زبان" }, answer: "B"},
+	
+	{category_id: 11, statement:"images/people/sister.jpg", options:{A: "چچا " , B: "بہن ", C: "بھائی " }, answer: "B"},
+	{category_id: 11, statement:"images/people/father.jpg", options: {A: "بہن " , B: "چاچی ", C: "والد "}, answer: "C"},
+	{category_id: 11, statement:"images/people/mother.jpg", options: {A: "بھائی " , B: "ماں ", C: "والد "}, answer: "B"},
+	{category_id: 11, statement:"images/people/teacher.jpg", options: {A: "استاد " , B: "استانی ", C: "بھائی "}, answer: "B"},
+	{category_id: 11, statement:"images/people/doctor.jpg", options: {A: "ڈاکٹر " , B: "استاد ", C: "بہن"}, answer: "A"},
+	
+	{category_id: 14, statement: "images/weather/rain.jpg", options: {A: "گرمیاں " , B: "بارش ", C: "بہار "}, answer: "B"},
+	{category_id: 14, statement: "images/weather/winter.jpg", options: {A: "سردی " , B: "گرمیاں ", C: "خزاں "}, answer: "A"},
+	{category_id: 14, statement: "images/weather/autumn.jpg", options: {A: "بہار " , B: "بارش ", C: "خزاں "}, answer: "C"},
+	{category_id: 14, statement: "images/weather/summer.jpg", options: {A: "خزاں " , B: "گرمیاں ", C: "سردی "}, answer: "B"},
+	{category_id: 14, statement: "images/weather/spring.jpg", options: {A: "بارش " , B: "گرمیاں ", C: "بہار "}, answer: "C"},
+	
+	{category_id: 7, statement: "images/drinks/drinks.jpg", options: {A: "پانی " , B: "مشروبات ", C: "رس "}, answer:"B"},
+	{category_id: 7, statement: "images/drinks/water.jpg", options: {A: "پانی " , B: "شکنجبین ", C: "چائے "}, answer:"A"},
+	{category_id: 7, statement: "images/drinks/rooh-afza.jpg", options: {A: "شکنجبین " , B: "روح افزا  ", C: "دودھ"}, answer:"B"},
+	{category_id: 7, statement: "images/drinks/milk.jpg", options: {A: "چائے " , B: "پانی ", C: "دودھ"}, answer:"C"},
+	{category_id: 7, statement: "images/drinks/lemonade.jpg", options: {A: "شکنجبین " , B: "چائے ", C: "پانی"}, answer:"A"},
+	
+	{category_id: 5, statement: "images/colors/green.jpg", options: {A: " سبز " , B: "سرخ ", C: " نیلے"}, answer:"A"},
+	{category_id: 5, statement: "images/colors/red.jpg", options: {A: " سیاہ " , B: "گلابی ", C: " سرخ "}, answer:"C"},
+	{category_id: 5, statement: "images/colors/pink.jpg", options: {A: " گلابی " , B: "سبز ", C: " نیلے "}, answer:"A"},
+	{category_id: 5, statement: "images/colors/blue.jpg", options: {A: " سرخ " , B: "گلابی ", C: " نیلے "}, answer: "C"},
+	{category_id: 5, statement: "images/colors/black.jpg", options: {A: "گلابی " , B: "سیاہ ", C: " سبز"}, answer:"B"},
+	
+	{category_id: 4, statement: "images/city/city.jpg", options: {A: "رکشہ " , B: "شہر ", C: " سڑک"}, answer:"B"},
+	{category_id: 4, statement: "images/city/building.jpg", options: {A: "عمارت " , B: "بس ", C: " سڑک"}, answer:"A"},
+	{category_id: 4, statement: "images/city/rickshaw.jpg", options: {A: "شہر " , B: "گاڑی ", C: "رکشہ "}, answer:"C"},
+	{category_id: 4, statement: "images/city/bus.jpg", options: {A: " گاڑی " , B: "عمارت ", C: "بس "}, answer:"C"},
+	{category_id: 4, statement: "images/city/road.jpg", options: {A: " سڑک " , B: "رکشہ ", C: "شہر "}, answer:"A"},
+	
+	{category_id: 2, statement: "images/animals/animals.jpg", options: {A: "عمارت " , B: "انسان ", C: "جانور "}, answer:"C"},
+	{category_id: 2, statement: "images/animals/lion.jpg", options: {A: "شیر " , B: "بلی ", C: "سانپ"}, answer:"A"},
+	{category_id: 2, statement: "images/animals/snake.jpg", options: {A: "سانپ " , B: "چھپکلی ", C: "بندر "}, answer:"A"},
+	{category_id: 2, statement: "images/animals/elephant.jpg", options: {A: "سانپ " , B: "شیر ", C: " ہاتھی"}, answer:"C"},
+	{category_id: 2, statement: "images/animals/monkey.jpg", options: {A: "بلی " , B: "بندر ", C: " چھپکلی "}, answer:"B"},
+	
+	{category_id: 0, statement: "images/activities/running.jpg", options: {A: "بهاگنا " , B: "چلنا ", C: "مطالع کرنا "}, answer:"A"},
+	{category_id: 0, statement: "images/activities/drinking.jpg", options: {A: "سونا " , B: "پینا ", C: "چلنا "}, answer:"B"},
+	{category_id: 0, statement: "images/activities/eating.jpg", options: {A: "چلنا " , B: "کھانا ", C: "بهاگنا "}, answer:"B"},
+	{category_id: 0, statement: "images/activities/sleeping.jpg", options: {A: "پینا " , B: "مطالع کرنا ", C: "سونا "}, answer:"C"},
+	{category_id: 0, statement: "images/activities/studying.jpg", options: {A: "بهاگنا " , B: "کھانا ", C: "مطالع کرنا"}, answer:"C"},
 
+	{category_id: 12, statement: "images/things/bag.jpg", options: {A: "چابی " , B: "بستہ ", C: "جوتے "}, answer:"B"},
+	{category_id: 12, statement: "images/things/books.jpg", options: {A: "کتابیں " , B: "جوتے ", C: "گهڑی"}, answer:"A"},
+	{category_id: 12, statement: "images/things/clothes.jpg", options: {A: "چابی " , B: "کپڑے ", C: "بستہ "}, answer:"B"},
+	{category_id: 12, statement: "images/things/shoes.jpg", options: {A: "کتابیں " , B: "گهڑی ", C: "جوتے"}, answer:"C"},
+	{category_id: 12, statement: "images/things/key.jpg", options: {A: "کپڑے " , B: "بستہ ", C: "چابی "}, answer:"C"},
+
+	{category_id: 13, statement: "images/time/clock.jpg", options: {A: "دیکهنا " , B: "شام ", C: " گهڑی"}, answer:"C"},
+	{category_id: 13, statement: "images/time/noon.jpg", options: {A: "غروب آفتاب " , B: "دوپہر  ", C: "رات "}, answer:"B"},
+	{category_id: 13, statement: "images/time/morning.jpg", options: {A: "شام " , B: "گهڑی ", C: "صبح "}, answer:"C"},
+	{category_id: 13, statement: "images/time/night.jpg", options: {A: " رات " , B: "فجر ", C: "دوپہر "}, answer:"A"},
+	{category_id: 13, statement: "images/time/evening.jpg", options: {A: "گهڑی " , B: "شام ", C: "فجر "}, answer:"B"},
+	
+	{category_id: 8, statement: "images/emotions/scared.jpg", options: {A: "دکھی " , B: "ڈرا ہوا ", C: "خوش "}, answer:"B"},
+	{category_id: 8, statement: "images/emotions/crying.jpg", options: {A: "رونا " , B: "غصہ ", C: "ہنسی"}, answer:"A"},
+	{category_id: 8, statement: "images/emotions/happy.jpg", options: {A: " ڈرا ہوا " , B: "غصہ ", C: "خوش "}, answer:"C"},
+	{category_id: 8, statement: "images/emotions/sad.jpg", options: {A: "رونا " , B: "دکھی ", C: " ہنسی"}, answer:"B"},
+	{category_id: 8, statement: "images/emotions/angry.jpg", options: {A: "خوش " , B: "ڈرا ہوا ", C: "غصہ "}, answer:"C"}
 ]
 
 $scope.checkAnswers = function(answers, answer) {
@@ -19,10 +97,10 @@ $scope.checkAnswers = function(answers, answer) {
 	}
 	counter  = Number($routeParams.qid) + 1;
 	$location.path('category/'+ $routeParams.id + '/quiz/'+ counter);
-	console.log('Counter is ' + counter + ' === ' + $scope.questionsArr.length)
 	if ($scope.changeButton == true) {
 		$http.post('/addMarks', {marks: markingService.get('score'), owner_id: sessionService.get('user'), category_id: $routeParams.id}).then(function(res){
 			if (res.data.message == 'Marking Created') {
+				markingService.remove();
 				$location.path('/category/'+$routeParams.id);
 			}
 		})
@@ -128,6 +206,10 @@ var quizDict = [
         answers: ["B", "A", "C", "B", "C"]},
 
 ]
+
+
+
+
     
 
 });

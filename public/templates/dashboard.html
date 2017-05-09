@@ -26,16 +26,7 @@
         <md-card class='' flex='25' flex-gt-xs='20'  layout-align="center center" ng-repeat="todo in categories"  >
           <img ng-src="{{todo.src}}" class="md-card-image" alt="Washed Out" style='height:140px !important; '>
             <span layout="row"><hr  flex style="color:#000"/></span>
-            <!--<md-button md-no-ink class=" md-raised">{{todo.text}}</md-button>-->
-            <md-button md-no-ink class="md-raised" id='play' ng-href="#/category/{{todo.id}}" ng-click = "showCategory(todo.id)">{{todo.text}}</md-button>
-            <!--<md-button>
-              <md-icon md-font-icon="icon-home" ng-style="{color: 'green', 'font-size':'36px', height:'36px'}">
-              </md-icon>
-            </md-button>-->
-            <!--<md-button md-no-ink class=" md-raised" id='add{{todo.id}}' ng-click='add_alphabet(todo.id)'>Add</md-button>-->
-            <!--<md-card-content>
-              <audio id="buzzer" src="audio files/alif.mp3" type="audio/ogg">Your browser does not support the &#60;audio&#62; element.</audio>
-            </md-card-content>-->
+            <md-button md-no-ink class="md-raised" ng-href="#/category/{{todo.id}}"><h2 style="font-family: 'mehr';font-size:33px;" get-translated-text word="{{todo.text}}"></h2></md-button>
         </md-card>
     </div>
 </md-content>
@@ -43,21 +34,20 @@
 <hr>
 
 <md-content class="md-padding" ng-controller="categoriesController" ng-init="userCategories(sessionService.get('user'))">
+    <h2>Your Cateogries</h2>
+    <hr>
     <div layout="" layout-gt-xs="row" layout-wrap >
         <md-card class='' flex='25' flex-gt-xs='20'  layout-align="center center" ng-repeat="category in userDefinedCategories"  >
           <img ng-src="/uploads/{{category.image}}" class="md-card-image" alt="Washed Out" style='height:140px !important; '>
             <span layout="row"><hr  flex style="color:#000"/></span>
-            <!--<md-button md-no-ink class=" md-raised">{{todo.text}}</md-button>-->
-            <md-button md-no-ink class="md-raised" id='play' ng-href="#/category/{{category._id}}" ng-click = "showCategory(category._id)">{{category.title}}</md-button>
-            <!--<md-button>
-              
-              <md-icon md-font-icon="icon-home" ng-style="{color: 'green', 'font-size':'36px', height:'36px'}">
-              </md-icon>
-            </md-button>-->
-            <!--<md-button md-no-ink class=" md-raised" id='add{{todo.id}}' ng-click='add_alphabet(todo.id)'>Add</md-button>-->
-            <!--<md-card-content>
-              <audio id="buzzer" src="audio files/alif.mp3" type="audio/ogg">Your browser does not support the &#60;audio&#62; element.</audio>
-            </md-card-content>-->
+            <md-button class="md-raised" ng-href="#/category/{{category._id}}"><h2 style="font-family: 'mehr';font-size:33px;" get-translated-text word="{{category.title}}"></h2></md-button>
+             
         </md-card>
     </div>
 </md-content>
+
+<style>
+  .md-primary{
+    background: rgb(16,108,200) !important;
+  }   
+</style>

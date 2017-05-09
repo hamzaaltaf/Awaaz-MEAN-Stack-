@@ -40,7 +40,7 @@
     $scope.logout = function(){
         console.log('called with the id ' + $rootScope.user_id);
         sessionService.destroy($rootScope.user_id);
-        $location.path('/index.html')
+        $location.path('/')
     }
 
     $scope.isActive = function(viewLocation) {

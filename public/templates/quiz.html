@@ -38,18 +38,18 @@
       </md-content>
       <div class='row container'>
          <form ng-submit="checkAnswers(answers, questionsArr.answer)"> 
-            <md-content class="md-padding"> 
-              <div class="col-md-3">
+            <md-content class="md-padding" style="font-family:mehr; font-size:33px;"> 
+              <div class="col-md-12 col-xs-12">
                   <md-checkbox ng-model="answers.A" aria-label="Checkbox 1">
                   {{questionsArr.options.A}}   
                 </md-checkbox>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-12 col-xs-12">
                 <md-checkbox ng-model="answers.B"  aria-label="Checkbox 1">
                 {{questionsArr.options.B}}   
               </md-checkbox>
             </div>
-              <div class="col-md-3">
+              <div class="col-md-12 col-xs-12">
                 <md-checkbox ng-model="answers.C"  aria-label="Checkbox 1">
                 {{questionsArr.options.C}}  
               </md-checkbox>

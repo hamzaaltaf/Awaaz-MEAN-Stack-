@@ -1,11 +1,12 @@
 
-myapp.controller('categoriesController',function ($scope, $mdDialog, $route, $routeParams, $http, $location, sessionService) {
+myapp.controller('categoriesController',function ($scope, $mdDialog, $route, $routeParams, $http, $location, translationService, sessionService) {
      $scope.sessionService = sessionService;
+     $scope.translationService = translationService;
      $scope.categories = [
         {text:'Activities', src:'images/Categories/activities.png',id:0},         
         {text: 'Alphabets', src:'images/Categories/alphabets.jpg',id:1},
         {text: 'Animals', src:'images/Categories/animals.png',id:2},
-         {text: 'Body Parts', src:'images/Categories/body-parts.jpeg',id:3},
+         {text: 'Body Parts', src:'images/Categories/body parts.jpeg',id:3},
         {text: 'City', src:'images/Categories/city.png',id:4},
         {text: 'Colors', src:'images/Categories/colors.jpeg',id:5},
         {text: 'Daily', src:'images/Categories/daily.png',id:6},
@@ -22,6 +23,7 @@ myapp.controller('categoriesController',function ($scope, $mdDialog, $route, $ro
       
       ];
       // forthe category CRUD
+      
       $scope.showCategory = function(id) {
         $scope.categoryId = id;
         // $location.path('/category/' + id);
