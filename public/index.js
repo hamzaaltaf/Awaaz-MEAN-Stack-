@@ -22,7 +22,7 @@ var myapp = angular.module('AwaazApp', ['ngRoute','ngMaterial'])
 							templateUrl: 'templates/add_category.html',
 							controller: 'categoriesController'
 					})
-					.when('category/:id', {
+					.when('/category/:id', {
 							templateUrl: 'templates/category.html',
 							controller: 'wordsController'						
 					})
