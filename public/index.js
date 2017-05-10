@@ -1,6 +1,5 @@
 var myapp = angular.module('AwaazApp', ['ngRoute','ngMaterial'])
     myapp.config(function($routeProvider,$locationProvider,$sceDelegateProvider){
-			// $locationProvider.html5Mode(true);
             $locationProvider.hashPrefix('');
 			$routeProvider
 					.when('/', {
@@ -104,19 +103,7 @@ myapp.factory('markingService',['$http', function(){
   }  
 }])
 
-// for translation of words
-myapp.factory('translationService',['$http', function($http){
-  var translatedtext = 0;
-  return {
-    callTranslator: function(word){
-        console.log('This is word')
-        $http.post('http://www.transltr.org/api/translate?text='+word+'&to=ur').then(function(res){
-            console.log('This is response of translation api ' + res);
-            return res;
-     })
-    }
-  }  
-}])
+
 
 myapp.directive('getTranslatedText', function($http,$sce){
   return {

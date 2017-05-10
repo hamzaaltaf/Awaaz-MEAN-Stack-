@@ -1,7 +1,6 @@
 
-myapp.controller('categoriesController',function ($scope, $mdDialog, $route, $routeParams, $http, $location, translationService, sessionService) {
+myapp.controller('categoriesController',function ($scope, $mdDialog, $route, $routeParams, $http, $location, sessionService) {
      $scope.sessionService = sessionService;
-     $scope.translationService = translationService;
      $scope.categories = [
         {text:'Activities', src:'images/Categories/activities.png',id:0},         
         {text: 'Alphabets', src:'images/Categories/alphabets.jpg',id:1},
