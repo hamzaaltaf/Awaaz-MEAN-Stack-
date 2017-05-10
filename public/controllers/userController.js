@@ -20,18 +20,18 @@
     // navigation code
     $scope.navigateStats = function(){
         id = sessionService.get('user');
-        $location.path('/user/'+id+'/stats');
+        $location.path('/user/'+$routeParams.id+'/stats');
     }
     
     $scope.navigateDashboard = function() {
-        $location.path('/user/dashboard');
+        $location.path('/user/'+$routeParams.id+'/dashboard');
     }
 
     $scope.submit = function() {
         console.log($scope.userData)
         $http.post('/user/create', $scope.userData).then(function(res){
         $scope.user = res.data
-        $location.path('/user/dashboard')
+        $location.path('/user/'+$routeParams.id+'/dashboard');
         })
     }
 
@@ -53,7 +53,7 @@
                 $scope.showit = true;
                 console.log('This is showit ' + $scope.showit)
                 console.log('   This is user_id ' + $rootScope.user_id)
-                $location.path('/user/dashboard')
+                $location.path('/user/'+res.data.user._id+'/dashboard')
         } else {
                 console.log('   This is user_id ' + $rootScope.user_id)
                 // handle any other exception
@@ -120,7 +120,7 @@
     $scope.account_edit = function(id) {
         console.log('called with the id ' + id);
         id = sessionService.get('user');
-        $location.path('/user/'+id+'/edit');
+        $location.path('/user/'+$routeParams.id+'/edit');
     }
     $scope.close = function () {
       // Component lookup should always be available since we are not using `ng-if`

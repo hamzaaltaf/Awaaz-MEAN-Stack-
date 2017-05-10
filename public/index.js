@@ -14,7 +14,7 @@ var myapp = angular.module('AwaazApp', ['ngRoute','ngMaterial'])
 									templateUrl: 'templates/signup.html',
 									controller: 'userController'
 					})
-					.when('/user/dashboard', {
+					.when('/user/:id/dashboard', {
 									templateUrl: 'templates/dashboard.html',
 									controller: 'categoriesController'
 					})
@@ -22,7 +22,7 @@ var myapp = angular.module('AwaazApp', ['ngRoute','ngMaterial'])
 							templateUrl: 'templates/add_category.html',
 							controller: 'categoriesController'
 					})
-					.when('/category/:id', {
+					.when('category/:id', {
 							templateUrl: 'templates/category.html',
 							controller: 'wordsController'						
 					})

@@ -11,7 +11,7 @@
       <form name='category' action = '/addWord' method='POST' enctype="multipart/form-data">
       <!--<form name='category' ng-submit="addCategory()" enctype="multipart/form-data">  -->
         <div class="md-dialog-content">
-          <input name='owner_id' value="{{getCategoryId()}}" ></input>
+          <input name='owner_id' value="{{getCategoryId()}}" hidden></input>
           <md-input-container>
               <label>Word</label>
               <input name= 'title'>

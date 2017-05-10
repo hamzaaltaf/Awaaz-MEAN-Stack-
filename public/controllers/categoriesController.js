@@ -22,7 +22,10 @@ myapp.controller('categoriesController',function ($scope, $mdDialog, $route, $ro
       
       ];
       // forthe category CRUD
-      
+      $scope.getID = function() {
+        return $routeParams.id;
+      }
+
       $scope.showCategory = function(id) {
         $scope.categoryId = id;
         // $location.path('/category/' + id);
