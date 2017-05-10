@@ -1,0 +1,67 @@
+<md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-truncate style="position: absolute; left: 40px; right: 170px; top: 13px; bottom: 13px;">Estate Panel</md-truncate>
+
+        <span flex></span>
+
+         <md-button class="md-fab md-mini" aria-label="Favorite">
+           <md-tooltip md-direction="left">Dashboard</md-tooltip>
+          <md-icon md-font-library="material-icons">dashboard</md-icon>
+        </md-button>
+
+         <md-button class="md-fab md-mini" aria-label="Favorite" ng-click="showDailog($event)" ng-if="categoryId.length > 2"  ng-controller="wordsController">
+           <md-tooltip md-direction="left">Add Word</md-tooltip>
+          <md-icon md-font-library="material-icons" >add circle</md-icon>
+        </md-button>
+       <div ng-controller="userController"> 
+        <md-button class="md-fab md-mini" ng-controller='userController' aria-label="Favorite" ng-click = "logout(user_id)">
+           <md-tooltip md-direction="left" >Logout</md-tooltip>
+          <md-icon md-font-library="material-icons"   >power settings new</md-icon>
+        </div>
+        </md-button>
+      </div>
+</md-toolbar>
+
+<center>
+  <br>
+  <div class="row" style='height:50px; width:50px; border-radius:50%; border: 5px solid #000; font-size:22px;'>
+    {{markingService.get()}}
+  </div>
+</center>
+
+<div ng-controller="quizzesController" >  
+    <div class='row'>
+      <md-content class="md-padding">
+        <div class="col-md-6">
+          <md-button id='play' ng-click='play(audioArr.statement)' md-padding class="md-raised md-primary">Play Question</md-button>
+          <!--<img src="{{questionsArr.statement}}" style='height:140px !important; '>-->
+        </div>
+      </md-content>
+      <div class='row container'>
+         <form ng-submit="AcheckAnswers(answers, audioArr.answer)"> 
+            <md-content class="md-padding" style="font-family:mehr; font-size:33px;"> 
+              <div class="col-md-12 col-xs-12">
+                  <md-checkbox ng-model="answers.A" aria-label="Checkbox 1">
+                  {{audioArr.options.A}}   
+                </md-checkbox>
+              </div>
+              <div class="col-md-12 col-xs-12">
+                <md-checkbox ng-model="answers.B"  aria-label="Checkbox 1">
+                {{audioArr.options.B}}   
+              </md-checkbox>
+            </div>
+              <div class="col-md-12 col-xs-12">
+                <md-checkbox ng-model="answers.C"  aria-label="Checkbox 1">
+                {{audioArr.options.C}}  
+              </md-checkbox>
+            </div>
+              <md-button type="submit" class='md-raised md-primary' ng-if="changeButton == false" value="Submit">Next</md-button>
+              <md-button type="submit" class='md-raised md-primary' ng-if="changeButton == true" value="Submit">Submit</md-button>
+            </md-content>
+      
+      </form>
+      </div>
+      <hr>
+    </div>
+      
+</div>

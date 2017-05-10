@@ -27,8 +27,12 @@ var myapp = angular.module('AwaazApp', ['ngRoute','ngMaterial'])
 							templateUrl: 'templates/category.html',
 							controller: 'wordsController'						
 					})
-                    .when('/category/:id/quiz/:qid', {
+          .when('/category/:id/quiz/:qid', {
 							templateUrl: 'templates/quiz.html',
+							controller: 'quizzesController'						
+					})
+          .when('/category/:id/quiz/audio/:qid', {
+							templateUrl: 'templates/audio_quiz.html',
 							controller: 'quizzesController'						
 					})
           .when('/user/:id/edit', {

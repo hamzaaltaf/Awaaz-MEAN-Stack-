@@ -22,19 +22,6 @@ var upload=multer({dest: 'images/'});
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 mongoose.connect('mongodb://localhost/AwaazApp');
 
-// var category = mongoose.model('categories', mongoose.Schema({
-// 	title: String,
-// 	image: String, 
-//   owner_id : [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
-// }));
-
-
-// var word = mongoose.model('words', mongoose.Schema({
-// 		name: String,
-//     audioFile: String,
-//     imageFile: String,
-//     // dictionary: [{ type: Number, ref: 'dictionary' }]
-// }));
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //																Application Pre-Req
@@ -280,6 +267,7 @@ app.post('/getWords', function(req, res){
 
 app.post('/addMarks', function(req, res){
   console.log('This is for marks  ' + req.body)
+  var createNew = true;
   var markingObj = new marking ({
     marks: req.body.marks,
     owner_id: req.body.owner_id,
@@ -287,10 +275,26 @@ app.post('/addMarks', function(req, res){
     total : req.body.total
   })
 
-  marking.createMarking(markingObj, function(err, marking){
+  marking.findOne({category_id : req.body.category_id, owner_id : req.body.owner_id}, function(err, result){
     if (err) throw err;
-    res.send({message:'Marking Created', marking: marking});
+    if (result != null) {
+      createNew = false;
+    }
   })
+
+  if (createNew) {
+    marking.createMarking(markingObj, function(err, marking){
+      if (err) throw err;
+      res.send({message:'Marking Created', marking: marking});
+    })
+  } else {
+    marking.findOneAndUpdate({category_id : req.body.category_id, owner_id : req.body.owner_id},
+    {total: req.body.total, marks : req.body.marks,category_id : req.body.category_id, owner_id : req.body.owner_id},
+    function(err, marking) {
+      if (err) throw err;
+      res.send({message:'Marking Updated', marking: marking});
+    })
+  }
 })
 
 app.post('/category/add',function(req, res) {

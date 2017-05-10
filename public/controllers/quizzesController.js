@@ -88,6 +88,99 @@ var aquiz = [
 	{category_id: 8, statement: "images/emotions/angry.jpg", options: {A: "خوش " , B: "ڈرا ہوا ", C: "غصہ "}, answer:"C"}
 ]
 
+
+var audio_quiz = [
+	{category_id: 9, statement: "Audio/fruits/apple.wav", options: {A: " سیب " , B: "اسٹرابیری ", C: " مالٹا "}, answer: "A"}, 
+	{category_id: 9, statement: "Audio/fruits/watermelon.wav", options: {A: " تربوز " , B: "خربوزه ", C: " سیب"}, answer: "A"},
+	{category_id: 9, statement: "Audio/fruits/pineapple.wav", options: {A: " تربوز " , B: "انناس ", C: " اسٹرابیری "}, answer: "B"},
+	{category_id: 9, statement:"Audio/fruits/cherry.wav" , options:{A: " تربوز " , B: "انناس ", C: " چیری " }, answer: "C"},
+	{category_id: 9, statement: "Audio/fruits/pear.wav", options: {A: " سیب " , B: "ناشپاتی ", C: " اسٹرابیری"}, answer: "B"},
+	
+	{category_id: 14, statement: "Audio/vegetables/tomato.wav", options: {A: " ٹماٹر " , B: "مولی  ", C: " آلو "}, answer: "A"},
+	{category_id: 14, statement: "Audio/vegetables/cabbage.wav", options: {A: " آلو " , B: "گاجر ", C: " بند گوبهی"}, answer: "C"},
+	{category_id: 14, statement: "Audio/vegetables/garlic.wav", options: {A: "گاجر " , B: "ادرک ", C: " لہسن"}, answer: "C"},
+	{category_id: 14, statement: "Audio/vegetables/carrot.wav", options: {A: " لوکی " , B: "گاجر ", C: " مولی"}, answer: "B"},
+	{category_id: 14, statement: "Audio/vegetables/radish.wav", options: {A: "مولی " , B: "لہسن ", C: " گاجر"}, answer: "A"},
+	
+	{category_id: 10, statement:"Audio/house/room.wav" , options:{A: " گلی " , B: "باغ ", C: "کمره" }, answer: "C"},
+	{category_id: 10, statement: "Audio/house/stairs.wav", options:{A: " سیڑھیاں " , B: "چھت ", C: "باورچی خانه" }, answer: "A"},
+	{category_id: 10, statement:"Audio/house/terrace.wav" , options:{A: "باورچی خانه " , B: "چھت ", C: " غسلخانه " }, answer: "B"},
+	{category_id: 10, statement:"Audio/house/kitchen.wav" , options:{A: "باغ " , B: "باورچی خانه ", C: " کمره" }, answer: "B"},
+	{category_id: 10, statement:"Audio/house/bathroom.wav" , options:{A: " غسلخانه " , B: "کمره ", C: " سیڑھیاں" }, answer: "A"},
+	
+	{category_id: 3, statement:"Audio/organs/tongue.wav" , options:{A: "چہرہ " , B: "دانت ", C: "زبان" }, answer: "C"},
+	{category_id: 3, statement:"Audio/organs/ear.wav" , options:{A: "کان " , B: "چہرہ ", C: "ناک" }, answer: "A"},
+	{category_id: 3, statement:"Audio/organs/eyes.wav" , options:{A: "زبان " , B: "آنکھیں ", C: "دانت " }, answer: "B"},
+	{category_id: 3, statement:"Audio/organs/teeth.wav" , options:{A: "آنکھیں " , B: "دانت ", C: "کان " }, answer: "B"},
+	{category_id: 3, statement:"Audio/organs/nose.wav" , options:{A: "چہرہ " , B: "ناک ", C: "زبان" }, answer: "B"},
+	
+	{category_id: 11, statement:"Audio/people/sister.wav", options:{A: "چچا " , B: "بہن ", C: "بھائی " }, answer: "B"},
+	{category_id: 11, statement:"Audio/people/father.wav", options: {A: "بہن " , B: "چاچی ", C: "والد "}, answer: "C"},
+	{category_id: 11, statement:"Audio/people/mother.wav", options: {A: "بھائی " , B: "ماں ", C: "والد "}, answer: "B"},
+	{category_id: 11, statement:"Audio/people/teacher.wav", options: {A: "استاد " , B: "استانی ", C: "بھائی "}, answer: "B"},
+	{category_id: 11, statement:"Audio/people/doctor.wav", options: {A: "ڈاکٹر " , B: "استاد ", C: "بہن"}, answer: "A"},
+	
+	{category_id: 14, statement: "Audio/weather/rain.wav", options: {A: "گرمیاں " , B: "بارش ", C: "بہار "}, answer: "B"},
+	{category_id: 14, statement: "Audio/weather/winter.wav", options: {A: "سردی " , B: "گرمیاں ", C: "خزاں "}, answer: "A"},
+	{category_id: 14, statement: "Audio/weather/autumn.wav", options: {A: "بہار " , B: "بارش ", C: "خزاں "}, answer: "C"},
+	{category_id: 14, statement: "Audio/weather/summer.wav", options: {A: "خزاں " , B: "گرمیاں ", C: "سردی "}, answer: "B"},
+	{category_id: 14, statement: "Audio/weather/spring.wav", options: {A: "بارش " , B: "گرمیاں ", C: "بہار "}, answer: "C"},
+	
+	{category_id: 7, statement: "Audio/drinks/drinks.wav", options: {A: "پانی " , B: "مشروبات ", C: "رس "}, answer:"B"},
+	{category_id: 7, statement: "Audio/drinks/water.wav", options: {A: "پانی " , B: "شکنجبین ", C: "چائے "}, answer:"A"},
+	{category_id: 7, statement: "Audio/drinks/rooh-afza.wav", options: {A: "شکنجبین " , B: "روح افزا  ", C: "دودھ"}, answer:"B"},
+	{category_id: 7, statement: "Audio/drinks/milk.wav", options: {A: "چائے " , B: "پانی ", C: "دودھ"}, answer:"C"},
+	{category_id: 7, statement: "Audio/drinks/lemonade.wav", options: {A: "شکنجبین " , B: "چائے ", C: "پانی"}, answer:"A"},
+	
+	{category_id: 5, statement: "Audio/colors/green.wav", options: {A: " سبز " , B: "سرخ ", C: " نیلے"}, answer:"A"},
+	{category_id: 5, statement: "Audio/colors/red.wav", options: {A: " سیاہ " , B: "گلابی ", C: " سرخ "}, answer:"C"},
+	{category_id: 5, statement: "Audio/colors/pink.wav", options: {A: " گلابی " , B: "سبز ", C: " نیلے "}, answer:"A"},
+	{category_id: 5, statement: "Audio/colors/blue.wav", options: {A: " سرخ " , B: "گلابی ", C: " نیلے "}, answer: "C"},
+	{category_id: 5, statement: "Audio/colors/black.wav", options: {A: "گلابی " , B: "سیاہ ", C: " سبز"}, answer:"B"},
+	
+	{category_id: 4, statement: "Audio/city/city.wav", options: {A: "رکشہ " , B: "شہر ", C: " سڑک"}, answer:"B"},
+	{category_id: 4, statement: "Audio/city/building.wav", options: {A: "عمارت " , B: "بس ", C: " سڑک"}, answer:"A"},
+	{category_id: 4, statement: "Audio/city/rickshaw.wav", options: {A: "شہر " , B: "گاڑی ", C: "رکشہ "}, answer:"C"},
+	{category_id: 4, statement: "Audio/city/bus.wav", options: {A: " گاڑی " , B: "عمارت ", C: "بس "}, answer:"C"},
+	{category_id: 4, statement: "Audio/city/road.wav", options: {A: " سڑک " , B: "رکشہ ", C: "شہر "}, answer:"A"},
+	
+	{category_id: 2, statement: "Audio/animals/animals.wav", options: {A: "عمارت " , B: "انسان ", C: "جانور "}, answer:"C"},
+	{category_id: 2, statement: "Audio/animals/lion.wav", options: {A: "شیر " , B: "بلی ", C: "سانپ"}, answer:"A"},
+	{category_id: 2, statement: "Audio/animals/snake.wav", options: {A: "سانپ " , B: "چھپکلی ", C: "بندر "}, answer:"A"},
+	{category_id: 2, statement: "Audio/animals/elephant.wav", options: {A: "سانپ " , B: "شیر ", C: " ہاتھی"}, answer:"C"},
+	{category_id: 2, statement: "Audio/animals/monkey.wav", options: {A: "بلی " , B: "بندر ", C: " چھپکلی "}, answer:"B"},
+	
+	{category_id: 0, statement: "Audio/activities/running.wav", options: {A: "بهاگنا " , B: "چلنا ", C: "مطالع کرنا "}, answer:"A"},
+	{category_id: 0, statement: "Audio/activities/drinking.wav", options: {A: "سونا " , B: "پینا ", C: "چلنا "}, answer:"B"},
+	{category_id: 0, statement: "Audio/activities/eating.wav", options: {A: "چلنا " , B: "کھانا ", C: "بهاگنا "}, answer:"B"},
+	{category_id: 0, statement: "Audio/activities/sleeping.wav", options: {A: "پینا " , B: "مطالع کرنا ", C: "سونا "}, answer:"C"},
+	{category_id: 0, statement: "Audio/activities/studying.wav", options: {A: "بهاگنا " , B: "کھانا ", C: "مطالع کرنا"}, answer:"C"},
+
+	{category_id: 12, statement: "Audio/things/bag.wav", options: {A: "چابی " , B: "بستہ ", C: "جوتے "}, answer:"B"},
+	{category_id: 12, statement: "Audio/things/books.wav", options: {A: "کتابیں " , B: "جوتے ", C: "گهڑی"}, answer:"A"},
+	{category_id: 12, statement: "Audio/things/clothes.wav", options: {A: "چابی " , B: "کپڑے ", C: "بستہ "}, answer:"B"},
+	{category_id: 12, statement: "Audio/things/shoes.wav", options: {A: "کتابیں " , B: "گهڑی ", C: "جوتے"}, answer:"C"},
+	{category_id: 12, statement: "Audio/things/key.wav", options: {A: "کپڑے " , B: "بستہ ", C: "چابی "}, answer:"C"},
+
+	{category_id: 13, statement: "Audio/time/clock.wav", options: {A: "دیکهنا " , B: "شام ", C: " گهڑی"}, answer:"C"},
+	{category_id: 13, statement: "Audio/time/noon.wav", options: {A: "غروب آفتاب " , B: "دوپہر  ", C: "رات "}, answer:"B"},
+	{category_id: 13, statement: "Audio/time/morning.wav", options: {A: "شام " , B: "گهڑی ", C: "صبح "}, answer:"C"},
+	{category_id: 13, statement: "Audio/time/night.wav", options: {A: " رات " , B: "فجر ", C: "دوپہر "}, answer:"A"},
+	{category_id: 13, statement: "Audio/time/evening.wav", options: {A: "گهڑی " , B: "شام ", C: "فجر "}, answer:"B"},
+	
+	{category_id: 8, statement: "Audio/emotions/scared.wav", options: {A: "دکھی " , B: "ڈرا ہوا ", C: "خوش "}, answer:"B"},
+	{category_id: 8, statement: "Audio/emotions/crying.wav", options: {A: "رونا " , B: "غصہ ", C: "ہنسی"}, answer:"A"},
+	{category_id: 8, statement: "Audio/emotions/happy.wav", options: {A: " ڈرا ہوا " , B: "غصہ ", C: "خوش "}, answer:"C"},
+	{category_id: 8, statement: "Audio/emotions/sad.wav", options: {A: "رونا " , B: "دکھی ", C: " ہنسی"}, answer:"B"},
+	{category_id: 8, statement: "Audio/emotions/angry.wav", options: {A: "خوش " , B: "ڈرا ہوا ", C: "غصہ "}, answer:"C"}
+]
+
+
+$scope.play = function(audioSrc){
+        var audio = new Audio(audioSrc);
+        audio.play();
+}
+
 $scope.checkAnswers = function(answers, answer) {
 	keys  = Object.keys($scope.answers)
 	console.log('This is scope ' + keys);
@@ -97,6 +190,25 @@ $scope.checkAnswers = function(answers, answer) {
 	}
 	counter  = Number($routeParams.qid) + 1;
 	$location.path('category/'+ $routeParams.id + '/quiz/'+ counter);
+	if ($scope.changeButton == true) {
+		$http.post('/addMarks', {marks: markingService.get('score'), owner_id: sessionService.get('user'), category_id: $routeParams.id, total: counter - 1}).then(function(res){
+			if (res.data.message == 'Marking Created') {
+				markingService.remove();
+				$location.path('/category/'+$routeParams.id);
+			}
+		})
+	}
+}
+
+$scope.AcheckAnswers = function(answers, answer) {
+	keys  = Object.keys($scope.answers)
+	console.log('This is scope ' + keys);
+	if (keys == answer) {
+		markingService.increment()
+		console.log('Ho gya')
+	}
+	counter  = Number($routeParams.qid) + 1;
+	$location.path('category/'+ $routeParams.id + '/quiz/audio/'+ counter);
 	if ($scope.changeButton == true) {
 		$http.post('/addMarks', {marks: markingService.get('score'), owner_id: sessionService.get('user'), category_id: $routeParams.id, total: counter - 1}).then(function(res){
 			if (res.data.message == 'Marking Created') {
@@ -119,7 +231,9 @@ function getQuizOfCategory(quizzes, Cid, index) {
 			} 
 			return questionsArr[index - 1];
 		}
-		$scope.questionsArr = getQuizOfCategory(aquiz, $routeParams.id, $routeParams.qid)
+		$scope.questionsArr = getQuizOfCategory(aquiz, $routeParams.id, $routeParams.qid);
+		$scope.audioArr = getQuizOfCategory(audio_quiz, $routeParams.id, $routeParams.qid);
+
 var quizDict = [
     {id: 9,
 	category:"Fruits",

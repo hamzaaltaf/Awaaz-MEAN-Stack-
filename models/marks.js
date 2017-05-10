@@ -10,6 +10,7 @@ var markingSchema = mongoose.Schema({
 var marking = module.exports =  mongoose.model('Marking', markingSchema)
 
 module.exports.createMarking = function(marksObj, callback) {
+    
     marksObj.save(callback);
 }
 
