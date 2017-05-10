@@ -1,6 +1,6 @@
 <md-toolbar>
       <div class="md-toolbar-tools">
-        <md-truncate><a><img src="images/awazLogo.png" style="padding-top:2em;"></a></md-truncate>
+        <md-truncate><a><img src="images/awazLogo.png" style="padding-top:1em;"></a></md-truncate>
 
         <span flex></span>
 
@@ -17,6 +17,12 @@
         <md-button class="md-fab md-mini" aria-label="Favorite" ng-click = "logout('user')">
            <md-tooltip md-direction="left" >Logout</md-tooltip>
           <md-icon md-font-library="material-icons"   >power settings new</md-icon>
+        </div>
+        </md-button>
+
+        <md-button class="md-fab md-mini" ng-controller='userController' aria-label="Favorite" ng-click = "account_edit('user')">
+           <md-tooltip md-direction="left" >Settings</md-tooltip>
+          <md-icon md-font-library="material-icons"   >face</md-icon>
         </div>
         </md-button>
       </div>
