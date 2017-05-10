@@ -22,7 +22,7 @@ var upload=multer({dest: 'images/'});
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // mongoose.connect('mongodb://localhost/AwaazApp');
 // app.set('MONGO_URI', (process.env.PORT || 3000));
-mongoURI = 'mongodb://hamzaaltaf:Leena$@1387@ds137281.mlab.com:37281/awaazapp';
+mongoURI = 'mongodb://hamzaaltaf:password123@ds137281.mlab.com:37281/awaazapp';
 mongoose.connect(mongoURI);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
